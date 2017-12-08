@@ -8,6 +8,7 @@ import { AngularFireAuthModule } from 'angularfire2/auth';
 
 import { environment } from '../environments/environment';
 
+import { CoreModule } from './core/core.module';
 import { StateModule } from './state/state.module';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -24,8 +25,9 @@ import { AppComponent } from './app.component';
     AngularFireModule.initializeApp(environment.firebase),
     AngularFirestoreModule,
     AngularFireAuthModule,
-    AppRoutingModule,
-    StateModule.forRoot()
+    CoreModule,
+    StateModule.forRoot(),
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]

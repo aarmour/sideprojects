@@ -20,11 +20,13 @@ import { reducers, metaReducers } from './app.reducers';
 
 @NgModule({
   imports: [
-    StoreRouterConnectingModule,
     StoreModule.forRoot(reducers, { metaReducers }),
+    StoreRouterConnectingModule,
     StoreDevtoolsModule.instrument({ name: 'Trails App DevTools' } as any)
   ],
-  declarations: []
+  providers: [
+    { provide: RouterStateSerializer, useClass: CustomRouterStateSerializer }
+  ]
 })
 export class StateModule {
 

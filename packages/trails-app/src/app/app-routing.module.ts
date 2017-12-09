@@ -3,6 +3,10 @@ import { Routes, RouterModule } from '@angular/router';
 
 const routes: Routes = [
   {
+    path: 'login',
+    loadChildren: './+login/login.module#LoginModule'
+  },
+  {
     path: 'trail-conditions',
     loadChildren: './+trail-conditions/trail-conditions.module#TrailConditionsModule'
   },

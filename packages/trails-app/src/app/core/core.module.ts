@@ -5,6 +5,7 @@ import {
   SkipSelf
 } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { MatIconRegistry } from '@angular/material';
 
 import { ComponentsModule } from '../components/components.module';
 
@@ -13,15 +14,23 @@ import { ComponentsModule } from '../components/components.module';
     CommonModule,
     ComponentsModule
   ],
-  declarations: []
+  declarations: [],
+  providers: [
+    MatIconRegistry
+  ]
 })
 export class CoreModule {
 
-  constructor (@Optional() @SkipSelf() parentModule: CoreModule) {
+  constructor (
+    @Optional() @SkipSelf() parentModule: CoreModule,
+    public matIconRegistry: MatIconRegistry
+  ) {
     if (parentModule) {
       throw new Error(
         'CoreModule is already loaded. Import it in the AppModule only');
     }
+
+    matIconRegistry.registerFontClassAlias('fontawesome', 'fa');
   }
 
   static forRoot(): ModuleWithProviders {

@@ -10,6 +10,7 @@ import { environment } from '../environments/environment';
 
 import { CoreModule } from './core/core.module';
 import { StateModule } from './state/state.module';
+import { AuthModule } from './auth';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -27,6 +28,7 @@ import { AppComponent } from './app.component';
     AngularFireAuthModule,
     CoreModule,
     StateModule.forRoot(),
+    AuthModule.forRoot(),
     AppRoutingModule
   ],
   providers: [],

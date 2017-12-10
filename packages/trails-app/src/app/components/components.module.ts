@@ -1,8 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
-import { SocialLoginButtonComponent } from './social-login-button/social-login-button.component';
-
 import {
   MatAutocompleteModule,
   MatButtonModule,
@@ -41,11 +39,9 @@ const matModules = [
     ...matModules
   ],
   declarations: [
-    SocialLoginButtonComponent
   ],
   exports: [
     ...matModules,
-    SocialLoginButtonComponent
   ]
 })
 export class ComponentsModule { }

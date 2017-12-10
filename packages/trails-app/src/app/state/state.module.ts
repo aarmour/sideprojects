@@ -21,6 +21,7 @@ import { reducers, metaReducers } from './app.reducers';
 @NgModule({
   imports: [
     StoreModule.forRoot(reducers, { metaReducers }),
+    EffectsModule.forRoot([]),
     StoreRouterConnectingModule,
     StoreDevtoolsModule.instrument({ name: 'Trails App DevTools' } as any)
   ],

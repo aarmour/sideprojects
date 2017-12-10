@@ -1,3 +1,4 @@
-<p>
-  login-container works!
-</p>
+<div *ngIf="isAuthInitialized | async">
+  <trl-social-login-button provider="facebook" (click)="loginWithFacebook()"></trl-social-login-button>
+  <trl-social-login-button provider="google" (click)="loginWithGoogle()"></trl-social-login-button>
+</div>

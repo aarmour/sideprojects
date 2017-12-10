@@ -13,6 +13,15 @@ import { SocialLoginButtonComponent } from './social-login-button/social-login-b
 
 @NgModule({
   imports: [
+    StoreModule.forFeature('auth', reducer, { initialState }),
+    EffectsModule.forFeature([AuthEffects])
+  ],
+  declarations: []
+})
+export class RootAuthModule { }
+
+@NgModule({
+  imports: [
     CommonModule,
     ComponentsModule
   ],
@@ -31,12 +40,3 @@ export class AuthModule {
     };
   }
 }
-
-@NgModule({
-  imports: [
-    StoreModule.forFeature('auth', reducer, { initialState }),
-    EffectsModule.forFeature([AuthEffects])
-  ],
-  declarations: []
-})
-export class RootAuthModule { }

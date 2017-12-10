@@ -7,7 +7,7 @@ import {
   LoginSuccessAction
 } from './auth.actions';
 
-export const reducer = function (state: AuthState, action: AuthActions) {
+export function reducer(state: AuthState, action: AuthActions) {
   switch (action.type) {
     case LOGIN_INITIALIZED: {
       return {
@@ -37,4 +37,4 @@ export const reducer = function (state: AuthState, action: AuthActions) {
       return state;
     }
   }
-};
+}

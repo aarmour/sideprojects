@@ -1,7 +1,14 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
+import { AuthGuard } from './auth';
+
 const routes: Routes = [
+  {
+    path: 'admin',
+    loadChildren: './+admin/admin.module#AdminModule',
+    canLoad: [AuthGuard]
+  },
   {
     path: 'login',
     loadChildren: './+login/login.module#LoginModule'
@@ -18,7 +25,14 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  imports: [
+    RouterModule.forRoot(routes)
+  ],
+  exports: [
+    RouterModule
+  ],
+  providers: [
+    AuthGuard
+  ]
 })
 export class AppRoutingModule { }

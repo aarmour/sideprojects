@@ -1,6 +1,19 @@
 {
   "rules": {
-    ".read": "auth != null",
-    ".write": "auth != null"
+    ".read": false,
+    ".write": false,
+    "permissions": {
+      "user": {
+        "$uid": {
+          ".read": "auth != null && $uid === auth.uid"
+        }
+      }
+    },
+    "trails": {
+      ".read": true,
+      "$trailId": {
+        ".write": "root.child('permissions/user/' + auth.uid + '/trails_modify').exists()"
+      }
+    }
   }
 }

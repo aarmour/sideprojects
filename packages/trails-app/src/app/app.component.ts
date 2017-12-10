@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 
+import { Angulartics2GoogleTagManager } from 'angulartics2/gtm';
+
 import { snek } from './snek';
 
 @Component({
@@ -9,7 +11,7 @@ import { snek } from './snek';
 })
 export class AppComponent {
 
-  constructor() {
+  constructor(angulartics2GoogleTagManager: Angulartics2GoogleTagManager) {
     console.log(snek);
   }
 

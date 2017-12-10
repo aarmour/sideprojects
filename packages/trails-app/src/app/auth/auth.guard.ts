@@ -13,9 +13,9 @@ import { Store } from '@ngrx/store';
 
 import {
   AuthState,
-  State
-} from './auth.interfaces';
-import { getAuthState } from './auth.selectors';
+  State,
+  getAuthState
+} from './state';
 
 @Injectable()
 export class AuthGuard implements CanLoad {

@@ -1,4 +1,4 @@
-import { State as RootState } from '../state';
+import { State as RootState } from '../../state';
 
 export interface UserInfo {
   displayName: string;

@@ -26,8 +26,7 @@ export class AuthGuard implements CanLoad {
   ) { }
 
   canLoad(route: Route): Observable<boolean> {
-    return this.store.select(getAuthState)
-      .filter((authState: AuthState) => authState.initialized)
+    return this.waitForAuthToInitialize()
       .map((authState: AuthState) => authState.isAuthenticated)
       .map((isAuthenticated: boolean) => {
         if (!isAuthenticated) {
@@ -36,5 +35,11 @@ export class AuthGuard implements CanLoad {
 
         return isAuthenticated;
       });
+  }
+
+  private waitForAuthToInitialize() {
+    return this.store.select(getAuthState)
+      .filter((authState: AuthState) => authState.initialized)
+      .take(1);
   }
 }

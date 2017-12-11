@@ -1,6 +1,7 @@
 {
   "projects": {
-    "default": "trails-app-b8a2d",
-    "staging": "trails-app-staging"
+    "default": "trails-app-staging",
+    "staging": "trails-app-staging",
+    "production": "trails-app-b8a2d"
   }
 }

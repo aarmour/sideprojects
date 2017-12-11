@@ -4,7 +4,7 @@ import { NgModule } from '@angular/core';
 import { ServiceWorkerModule } from '@angular/service-worker';
 
 import { AngularFireModule } from 'angularfire2';
-import { AngularFirestoreModule } from 'angularfire2/firestore';
+import { AngularFireDatabaseModule } from 'angularfire2/database';
 import { AngularFireAuthModule } from 'angularfire2/auth';
 
 import { Angulartics2Module } from 'angulartics2';
@@ -15,6 +15,7 @@ import { environment } from '../environments/environment';
 import { CoreModule } from './core/core.module';
 import { StateModule } from './state/state.module';
 import { AuthModule } from './auth';
+import { TrailsModule } from './trails';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -28,12 +29,13 @@ import { AppComponent } from './app.component';
     BrowserAnimationsModule,
     environment.production ? ServiceWorkerModule.register('/ngsw-worker.js') : [],
     AngularFireModule.initializeApp(environment.firebase),
-    AngularFirestoreModule,
+    AngularFireDatabaseModule,
     AngularFireAuthModule,
     Angulartics2Module.forRoot([Angulartics2GoogleTagManager]),
     CoreModule.forRoot(),
     StateModule.forRoot(),
     AuthModule.forRoot(),
+    TrailsModule.forRoot(),
     AppRoutingModule
   ],
   providers: [],

@@ -1,0 +1,37 @@
+{
+  "permissions" : {
+    "user" : {
+      "MpH2bjDVJzMer2R19Z5lBQxP9Dz2" : {
+        "trails_modify" : true
+      }
+    }
+  },
+  "trails" : {
+    "-L02bfvL8fajfSmB9Mez" : {
+      "currentCondition" : "Good",
+      "mtbProjectUrl" : "https://www.mtbproject.com/trail/605246/dakota-ridge-trail",
+      "name" : "Dakota Ridge",
+      "slug" : "dakota-ridge"
+    },
+    "-L02cNPQ6XX4nrYhyyb5" : {
+      "currentCondition" : "Fair",
+      "name" : "Buffalo Creek",
+      "slug": "buffalo-creek"
+    },
+    "-L0CoGhYbIzaeEE3ucea" : {
+      "currentCondition": "Fair",
+      "name" : "Mt. Falcon",
+      "slug": "mt-falcon"
+    },
+    "-L0CoJOFR77FNIjgS5CT" : {
+      "currentCondition": "Good",
+      "name" : "Lair O' the Bear",
+      "slug": "lair-o-the-bear"
+    },
+    "-L0CoOBuszvDyhucyS0m" : {
+      "currentCondition": "Poor",
+      "name" : "Deer Creek Canyon",
+      "slug": "deer-creek-canyon"
+    }
+  }
+}

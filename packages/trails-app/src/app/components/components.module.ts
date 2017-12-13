@@ -1,6 +1,8 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
+import { MtbProjectIconComponent } from './mtb-project-icon/mtb-project-icon.component';
+
 import {
   MatAutocompleteModule,
   MatButtonModule,
@@ -15,6 +17,7 @@ import {
   MatSelectModule,
   MatSlideToggleModule,
   MatSnackBarModule,
+  MatTooltipModule
 } from '@angular/material';
 
 const matModules = [
@@ -30,7 +33,8 @@ const matModules = [
   MatRadioModule,
   MatSelectModule,
   MatSlideToggleModule,
-  MatSnackBarModule
+  MatSnackBarModule,
+  MatTooltipModule
 ];
 
 @NgModule({
@@ -39,9 +43,11 @@ const matModules = [
     ...matModules
   ],
   declarations: [
+    MtbProjectIconComponent
   ],
   exports: [
     ...matModules,
+    MtbProjectIconComponent
   ]
 })
 export class ComponentsModule { }

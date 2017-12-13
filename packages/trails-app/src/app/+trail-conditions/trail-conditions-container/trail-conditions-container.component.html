@@ -2,6 +2,12 @@
   <mat-expansion-panel *ngFor="let trail of trails | async" hideToggle="true">
     <mat-expansion-panel-header>
       <mat-panel-title>{{trail.name}}</mat-panel-title>
+      <trl-trail-condition-text [condition]="trail.currentCondition"></trl-trail-condition-text>
     </mat-expansion-panel-header>
+    <mat-action-row>
+      <button mat-button color="primary">Update trail conditions</button>
+    </mat-action-row>
+
+    <trl-mtb-project-icon [url]="trail.mtbProjectUrl" *ngIf="trail.mtbProjectUrl"></trl-mtb-project-icon>
   </mat-expansion-panel>
 </mat-accordion>

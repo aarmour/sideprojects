@@ -5,6 +5,7 @@ import { ComponentsModule } from '../components/components.module';
 
 import { TrailConditionsRoutingModule } from './trail-conditions-routing.module';
 import { TrailConditionsContainerComponent } from './trail-conditions-container/trail-conditions-container.component';
+import { TrailConditionTextComponent } from './trail-condition-text/trail-condition-text.component';
 
 @NgModule({
   imports: [
@@ -13,7 +14,8 @@ import { TrailConditionsContainerComponent } from './trail-conditions-container/
     TrailConditionsRoutingModule
   ],
   declarations: [
-    TrailConditionsContainerComponent
+    TrailConditionsContainerComponent,
+    TrailConditionTextComponent
   ]
 })
 export class TrailConditionsModule { }

@@ -6,6 +6,7 @@ import { MtbProjectIconComponent } from './mtb-project-icon/mtb-project-icon.com
 import {
   MatAutocompleteModule,
   MatButtonModule,
+  MatButtonToggleModule,
   MatCheckboxModule,
   MatDatepickerModule,
   MatExpansionModule,
@@ -17,12 +18,14 @@ import {
   MatSelectModule,
   MatSlideToggleModule,
   MatSnackBarModule,
+  MatToolbarModule,
   MatTooltipModule
 } from '@angular/material';
 
 const matModules = [
   MatAutocompleteModule,
   MatButtonModule,
+  MatButtonToggleModule,
   MatCheckboxModule,
   MatDatepickerModule,
   MatExpansionModule,
@@ -34,6 +37,7 @@ const matModules = [
   MatSelectModule,
   MatSlideToggleModule,
   MatSnackBarModule,
+  MatToolbarModule,
   MatTooltipModule
 ];
 

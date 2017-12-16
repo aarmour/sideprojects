@@ -5,7 +5,7 @@
       <trl-trail-condition-text [condition]="trail.currentCondition"></trl-trail-condition-text>
     </mat-expansion-panel-header>
     <mat-action-row>
-      <button mat-button color="primary">Update trail conditions</button>
+      <a [routerLink]="[trail.slug, 'edit']" mat-button color="primary">Update trail conditions</a>
     </mat-action-row>
 
     <trl-mtb-project-icon [url]="trail.mtbProjectUrl" *ngIf="trail.mtbProjectUrl"></trl-mtb-project-icon>

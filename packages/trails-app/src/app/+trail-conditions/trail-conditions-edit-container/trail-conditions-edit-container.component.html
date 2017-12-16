@@ -1,0 +1,59 @@
+<div class="toolbar-wrapper">
+  <mat-toolbar color="primary">
+    <button mat-icon-button (click)="goBack()">
+      <mat-icon>chevron_left</mat-icon>
+    </button>
+    <span class="flex-fill text-center toolbar-title">
+      Update Conditions
+    </span>
+    <span class="toolbar-icon-button-spacer"></span>
+  </mat-toolbar>
+</div>
+
+<div class="form-wrapper">
+  <form>
+    <div class="form-group">
+      <mat-form-field>
+        <input matInput
+               name="date"
+               [matDatepicker]="picker"
+               [(ngModel)]="date"
+               placeholder="Choose a date">
+        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+      </mat-form-field>
+      <button mat-raised-button type="button" (click)="selectToday()">Today</button>
+    </div>
+    <div class="form-group">
+      <label>Condition</label>
+      <mat-button-toggle-group #condition="matButtonToggleGroup">
+        <mat-button-toggle value="Poor">
+          Poor
+        </mat-button-toggle>
+        <mat-button-toggle value="Fair">
+          Fair
+        </mat-button-toggle>
+        <mat-button-toggle value="Good">
+          Good
+        </mat-button-toggle>
+      </mat-button-toggle-group>
+    </div>
+
+    <div class="form-group flex flex-column">
+      <label>Hazards</label>
+      <mat-checkbox value="Wet / Muddy">Water / Mud</mat-checkbox>
+      <mat-checkbox value="Snow">Snow</mat-checkbox>
+      <mat-checkbox value="Sneks">Sneks</mat-checkbox>
+    </div>
+
+    <mat-form-field class="form-group fill-width">
+      <textarea matInput placeholder="Notes" rows="3"></textarea>
+    </mat-form-field>
+
+    <div class="flex">
+      <span class="flex-fill"></span>
+      <button mat-button type="button" (click)="goBack()">Cancel</button>
+      <button mat-button color="primary" type="submit">Save</button>
+    </div>
+  </form>
+</div>

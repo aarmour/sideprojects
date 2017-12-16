@@ -5,13 +5,14 @@ import {
   SkipSelf
 } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { MatIconRegistry } from '@angular/material';
+import { MatIconRegistry, MatNativeDateModule } from '@angular/material';
 
 import { ComponentsModule } from '../components/components.module';
 
 @NgModule({
   imports: [
     CommonModule,
+    MatNativeDateModule,
     ComponentsModule
   ],
   declarations: [],

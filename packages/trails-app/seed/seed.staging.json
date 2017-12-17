@@ -6,6 +6,8 @@
       }
     }
   },
+  "trailConditions" : {
+  },
   "trails" : {
     "-L02bfvL8fajfSmB9Mez" : {
       "currentCondition" : "Good",
@@ -16,22 +18,53 @@
     "-L02cNPQ6XX4nrYhyyb5" : {
       "currentCondition" : "Fair",
       "name" : "Buffalo Creek",
-      "slug": "buffalo-creek"
+      "slug" : "buffalo-creek"
     },
     "-L0CoGhYbIzaeEE3ucea" : {
-      "currentCondition": "Fair",
+      "currentCondition" : "Fair",
       "name" : "Mt. Falcon",
-      "slug": "mt-falcon"
+      "slug" : "mt-falcon"
     },
     "-L0CoJOFR77FNIjgS5CT" : {
-      "currentCondition": "Good",
+      "currentCondition" : "Good",
       "name" : "Lair O' the Bear",
-      "slug": "lair-o-the-bear"
+      "slug" : "lair-o-the-bear"
     },
     "-L0CoOBuszvDyhucyS0m" : {
-      "currentCondition": "Poor",
+      "currentCondition" : "Poor",
       "name" : "Deer Creek Canyon",
-      "slug": "deer-creek-canyon"
+      "slug" : "deer-creek-canyon"
+    },
+    "-L0_I4FPCAYQUY1UZUoR" : {
+      "name" : "Betasso",
+      "slug" : "betasso"
+    },
+    "-L0_IXV7eqb1f6-L90xh" : {
+      "name" : "Staunton State Park",
+      "slug" : "staunton-state-park"
+    },
+    "-L0_Iemmsro8NViWyBhh" : {
+      "currentCondition": "Good",
+      "name" : "White Ranch",
+      "slug" : "white-ranch"
+    },
+    "-L0_IpvSTe9gVUCv4FlY" : {
+      "name" : "Indian Creek",
+      "slug" : "indian-creek"
+    },
+    "-L0_IvzLsbW5xvZ73AGC" : {
+      "name" : "Colorado Trail, Segment 1",
+      "slug" : "colorado-trail-segment-1"
+    },
+    "-L0_JDRxn5CS4Pw28zKz" : {
+      "currentCondition": "Poor",
+      "name" : "Apex Park",
+      "slug" : "apex-park"
+    },
+    "-L0_JIXRGyUV8XlBl0Vh" : {
+      "currentCondition": "Poor",
+      "name" : "Enchanted Forest",
+      "slug" : "enchanted-forest"
     }
   }
 }

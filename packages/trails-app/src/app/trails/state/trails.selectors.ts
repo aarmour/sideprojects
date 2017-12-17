@@ -14,3 +14,6 @@ export const {
   selectAll: selectAllTrails,
   selectTotal: selectTrailsTotal
 } = adapter.getSelectors(getTrailsState);
+
+export const getSelectedTrail =
+  createSelector(getTrailsState, (state: TrailsState) => state.entities[state.selectedTrail]);

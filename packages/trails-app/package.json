@@ -14,7 +14,8 @@
     "database:seed:staging": "firebase use staging && firebase database:set / seed/seed.staging.json",
     "deploy:staging": "firebase use staging && firebase deploy",
     "deploy:production": "firebase use production && firebase deploy",
-    "deploy:database": "firebase deploy --only database"
+    "deploy:database:staging": "firebase use staging && firebase deploy --only database",
+    "deploy:functions:staging": "firebase use staging && firebase deploy --only functions"
   },
   "private": true,
   "dependencies": {

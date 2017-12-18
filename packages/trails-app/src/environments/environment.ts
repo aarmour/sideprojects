@@ -5,6 +5,10 @@
 
 export const environment = {
   production: false,
+  algolia: {
+    appId: 'LTZYBZRN7J',
+    searchApiKey: '365422edbcba4a229d4cd18e9604e022'
+  },
   firebase: {
     apiKey: 'AIzaSyBAEnzMUL4HDvcfHu7DzrVkTUQ9nv8Zvnk',
     authDomain: 'trails-app-staging.firebaseapp.com',

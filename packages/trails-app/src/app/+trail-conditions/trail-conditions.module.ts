@@ -2,7 +2,9 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 
-import { ComponentsModule } from '../components/components.module';
+import { AlgoliaModule } from '../algolia';
+import { ComponentsModule } from '../components';
+import { TrailsModule } from '../trails';
 
 import { TrailConditionsRoutingModule } from './trail-conditions-routing.module';
 import { TrailConditionsContainerComponent } from './trail-conditions-container/trail-conditions-container.component';
@@ -14,6 +16,8 @@ import { TrailConditionsEditContainerComponent } from './trail-conditions-edit-c
     CommonModule,
     FormsModule,
     ComponentsModule,
+    AlgoliaModule,
+    TrailsModule,
     TrailConditionsRoutingModule
   ],
   declarations: [

@@ -12,6 +12,7 @@ import { Angulartics2GoogleTagManager } from 'angulartics2/gtm';
 
 import { environment } from '../environments/environment';
 
+import { ALGOLIA_CONFIG, AlgoliaConfig, AlgoliaModule } from './algolia';
 import { AuthModule } from './auth';
 import { CoreModule } from './core/core.module';
 import { FirebaseModule } from './firebase';
@@ -20,6 +21,11 @@ import { TrailsModule } from './trails';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+
+const algoliaConfig: AlgoliaConfig = {
+  appId: environment.algolia.appId,
+  searchApiKey: environment.algolia.searchApiKey
+};
 
 @NgModule({
   declarations: [
@@ -34,13 +40,16 @@ import { AppComponent } from './app.component';
     AngularFireAuthModule,
     Angulartics2Module.forRoot([Angulartics2GoogleTagManager]),
     CoreModule.forRoot(),
+    AlgoliaModule.forRoot(),
     FirebaseModule.forRoot(),
     StateModule.forRoot(),
     AuthModule.forRoot(),
     TrailsModule.forRoot(),
     AppRoutingModule
   ],
-  providers: [],
+  providers: [
+    { provide: ALGOLIA_CONFIG, useValue: algoliaConfig }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

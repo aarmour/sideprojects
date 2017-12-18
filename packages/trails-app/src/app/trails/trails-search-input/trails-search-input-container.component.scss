@@ -1,0 +1,15 @@
+:host {
+  display: flex;
+  align-items: center;
+}
+
+.prefix,
+.suffix {
+  width: 56px;
+  color: #a2a2a2;
+  text-align: center;
+}
+
+.search-input-wrapper {
+  flex: 1;
+}

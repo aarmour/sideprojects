@@ -13,14 +13,16 @@
 <div class="form-wrapper">
   <form>
     <div class="form-group">
-      <mat-form-field>
+      <mat-form-field (click)="picker.open()">
         <input matInput
                name="date"
                [matDatepicker]="picker"
                [(ngModel)]="date"
-               placeholder="Choose a date">
+               [max]="maxDate"
+               placeholder="Choose a date"
+               disabled>
         <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
-        <mat-datepicker #picker></mat-datepicker>
+        <mat-datepicker #picker disabled="false"></mat-datepicker>
       </mat-form-field>
       <button mat-raised-button type="button" (click)="selectToday()">Today</button>
     </div>

@@ -25,6 +25,8 @@ export class TrailConditionsEditContainerComponent
 
   private slugParamSubscription: Subscription;
 
+  maxDate = new Date();
+
   trail: Observable<Trail>;
 
   date = new Date();
@@ -68,7 +70,7 @@ export class TrailConditionsEditContainerComponent
   }
 
   save(key: string) {
-    let path = `trailConditions/${key}`;
+    const path = `trailConditions/${key}`;
     this.store.dispatch(new ListPushAction({ path, data: this.data }));
   }
 

@@ -1,5 +1,9 @@
 <mat-form-field>
-  <input matInput type="search" [formControl]="searchInputControl" [matAutocomplete]="auto">
+  <input matInput
+         type="search"
+         [formControl]="searchInputControl"
+         [matAutocomplete]="auto"
+         #input>
   <mat-autocomplete #auto="matAutocomplete" [displayWith]="getDisplay">
     <mat-option *ngFor="let option of options | async" [value]="option">
       {{option.name}}

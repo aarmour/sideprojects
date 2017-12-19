@@ -13,7 +13,7 @@ export class TrailConditionTextComponent implements OnChanges {
     'Poor': 'red',
     'Fair': 'orange',
     'Good': 'green',
-    'Unknown': 'gray'
+    'Unknown': '#afafaf'
   };
   get color() {
     return this.colors[this.condition];

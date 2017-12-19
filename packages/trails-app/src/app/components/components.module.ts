@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
+import { BadgeComponent } from './badge/badge.component';
 import { MtbProjectIconComponent } from './mtb-project-icon/mtb-project-icon.component';
 
 import {
@@ -49,10 +50,12 @@ const matModules = [
     ...matModules
   ],
   declarations: [
+    BadgeComponent,
     MtbProjectIconComponent
   ],
   exports: [
     ...matModules,
+    BadgeComponent,
     MtbProjectIconComponent
   ]
 })

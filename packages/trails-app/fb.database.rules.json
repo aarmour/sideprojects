@@ -11,6 +11,7 @@
     },
     "trails": {
       ".read": true,
+      ".indexOn": ["slug"],
       "$trailId": {
         ".write": "root.child('permissions/user/' + auth.uid + '/trails_modify').exists()"
       }

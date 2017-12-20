@@ -23,7 +23,7 @@ function main() {
     .then((trails: object) => Object.keys(trails)
         .map((key: string) => {
           const item = trails[key];
-          return { objectID: key, name: item.name, slug: item.slug };
+          return { objectID: key, ...item };
         }))
     .then((objects) => {
       index.addObjects(objects, function (err) {

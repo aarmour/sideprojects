@@ -1,6 +1,13 @@
 import { Observable } from 'rxjs/Observable';
 
-import { Component, ViewChild } from '@angular/core';
+import {
+  Component,
+  EventEmitter,
+  Output,
+  ViewChild
+} from '@angular/core';
+
+import { MatAutocompleteSelectedEvent } from '@angular/material';
 
 import { Store } from '@ngrx/store';
 
@@ -12,6 +19,7 @@ import {
   getResultsByIndex
 } from '../../algolia';
 
+import { Trail } from '../state/trails.interfaces';
 import { TrailsSearchInputComponent } from './trails-search-input.component';
 
 @Component({
@@ -25,6 +33,8 @@ export class TrailsSearchInputContainerComponent {
 
   searchResults: Observable<any>;
 
+  @Output() selected = new EventEmitter<Trail>();
+
   @ViewChild('input') input: TrailsSearchInputComponent;
 
   constructor(private store: Store<State>) {
@@ -33,13 +43,20 @@ export class TrailsSearchInputContainerComponent {
   }
 
   clear() {
-    this.store.dispatch(new ClearSearchAction(this.indexName));
     this.input.clear();
     this.input.focus();
   }
 
-  onInputChange(value: string) {
+  onInputChange(value: string | object) {
+    if (typeof value === 'object') {
+      return;
+    }
+
     this.store.dispatch(new SearchAction({ index: this.indexName, query: value }));
+  }
+
+  onOptionSelected(event: MatAutocompleteSelectedEvent) {
+    this.selected.next(event.option.value);
   }
 
 }

@@ -1,11 +1,12 @@
 import { Component } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
 
 import { Observable } from 'rxjs/Observable';
 
 import { Store } from '@ngrx/store';
 
 import { State } from '../../state';
-import { selectAllTrails } from '../../trails';
+import { Trail, selectAllTrails, SelectTrailAction } from '../../trails';
 
 @Component({
   selector: 'trl-trail-conditions-container',
@@ -16,8 +17,17 @@ export class TrailConditionsContainerComponent {
 
   trails: Observable<any>;
 
-  constructor(private store: Store<State>) {
+  constructor(
+    private router: Router,
+    private route: ActivatedRoute,
+    private store: Store<State>
+  ) {
     this.trails = this.store.select(selectAllTrails);
+  }
+
+  onSearchSelected(trail: Trail) {
+    this.store.dispatch(new SelectTrailAction(trail.id));
+    this.router.navigate(['./', trail.slug], { relativeTo: this.route });
   }
 
 }

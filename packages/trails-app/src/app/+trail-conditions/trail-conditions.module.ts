@@ -10,6 +10,7 @@ import { TrailConditionsRoutingModule } from './trail-conditions-routing.module'
 import { TrailConditionsContainerComponent } from './trail-conditions-container/trail-conditions-container.component';
 import { TrailConditionTextComponent } from './trail-condition-text/trail-condition-text.component';
 import { TrailConditionsEditContainerComponent } from './trail-conditions-edit-container/trail-conditions-edit-container.component';
+import { TrailConditionsDetailContainerComponent } from './trail-conditions-detail-container/trail-conditions-detail-container.component';
 
 @NgModule({
   imports: [
@@ -23,7 +24,8 @@ import { TrailConditionsEditContainerComponent } from './trail-conditions-edit-c
   declarations: [
     TrailConditionsContainerComponent,
     TrailConditionTextComponent,
-    TrailConditionsEditContainerComponent
+    TrailConditionsEditContainerComponent,
+    TrailConditionsDetailContainerComponent
   ]
 })
 export class TrailConditionsModule { }

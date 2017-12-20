@@ -4,7 +4,9 @@
          [formControl]="searchInputControl"
          [matAutocomplete]="auto"
          #input>
-  <mat-autocomplete #auto="matAutocomplete" [displayWith]="getDisplay">
+  <mat-autocomplete #auto="matAutocomplete"
+                    [displayWith]="getDisplay"
+                    (optionSelected)="optionSelected.next($event)">
     <mat-option *ngFor="let option of options | async" [value]="option">
       {{option.name}}
     </mat-option>

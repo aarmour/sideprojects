@@ -1,6 +1,5 @@
-<trl-trails-search-input-container></trl-trails-search-input-container>
-
-<mat-accordion>
+<trl-trails-search-input-container (selected)="onSearchSelected($event)"></trl-trails-search-input-container>
+<!-- <mat-accordion>
   <mat-expansion-panel *ngFor="let trail of trails | async" hideToggle="true">
     <mat-expansion-panel-header>
       <mat-panel-title>{{trail.name}}</mat-panel-title>
@@ -12,6 +11,9 @@
 
     <trl-mtb-project-icon [url]="trail.mtbProjectUrl" *ngIf="trail.mtbProjectUrl"></trl-mtb-project-icon>
   </mat-expansion-panel>
-</mat-accordion>
-
-<trl-algolia-icon></trl-algolia-icon>
+</mat-accordion> -->
+<router-outlet></router-outlet>
+<footer class="flex">
+  <span class="flex-fill"></span>
+  <trl-algolia-icon></trl-algolia-icon>
+</footer>

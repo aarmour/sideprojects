@@ -9,6 +9,7 @@ import {
   ViewChild
 } from '@angular/core';
 import { FormControl } from '@angular/forms';
+import { MatAutocomplete, MatAutocompleteSelectedEvent } from '@angular/material';
 
 @Component({
   selector: 'trl-trails-search-input',
@@ -23,6 +24,8 @@ export class TrailsSearchInputComponent {
   @Output() valueChanges = this.searchInputControl.valueChanges;
 
   @ViewChild('input') input: ElementRef;
+
+  @Output() optionSelected = new EventEmitter<MatAutocompleteSelectedEvent>();
 
   constructor() { }
 

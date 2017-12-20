@@ -1,0 +1,11 @@
+<mat-card *ngIf="trail | async; let trail">
+  <mat-card-header>
+    <mat-card-title>{{trail.name}}</mat-card-title>
+    <trl-trail-condition-text [condition]="trail.currentCondition"></trl-trail-condition-text>
+  </mat-card-header>
+  <mat-card-content></mat-card-content>
+  <mat-card-actions class="flex">
+    <span class="flex-fill"></span>
+    <a routerLink="./edit" mat-button color="primary">UPDATE</a>
+  </mat-card-actions>
+</mat-card>

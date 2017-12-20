@@ -2,11 +2,25 @@ import { Action } from '@ngrx/store';
 
 import { Trail } from './trails.interfaces';
 
+export const TRAILS_FETCH_TRAIL = 'TRAILS_FETCH_TRAIL';
+export const TRAILS_FETCH_TRAIL_SUCCESS = 'TRAILS_FETCH_TRAIL_SUCCESS';
 export const TRAILS_LIST_UPDATED = 'TRAILS_LIST_UPDATED';
 export const TRAILS_SELECT_TRAIL = 'TRAILS_SELECT_TRAIL';
 export const TRAILS_SAVE_TRAIL_CONDITION = 'TRAILS_SAVE_TRAIL_CONDITION';
 export const TRAILS_SAVE_TRAIL_CONDITION_SUCCESS = 'TRAILS_SAVE_TRAIL_CONDITION_SUCCESS';
 export const TRAILS_SAVE_TRAIL_CONDITION_FAILURE = 'TRAILS_SAVE_TRAIL_CONDITION_FAILURE';
+
+export class FetchTrailAction {
+  readonly type = TRAILS_FETCH_TRAIL;
+
+  public constructor(public payload: string) { }
+}
+
+export class FetchTrailSuccessAction {
+  readonly type = TRAILS_FETCH_TRAIL_SUCCESS;
+
+  public constructor(public payload: Trail) { }
+}
 
 export class ListUpdatedAction {
   readonly type = TRAILS_LIST_UPDATED;
@@ -35,6 +49,8 @@ export class SaveTrailConditionFailure {
 }
 
 export type TrailsActions =
+  | FetchTrailAction
+  | FetchTrailSuccessAction
   | ListUpdatedAction
   | SelectTrailAction
   ;

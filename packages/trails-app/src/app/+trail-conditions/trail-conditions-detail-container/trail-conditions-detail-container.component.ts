@@ -44,7 +44,7 @@ export class TrailConditionsDetailContainerComponent
   }
 
   ngOnDestroy() {
-    // this.slugParamSubscription.unsubscribe();
+    this.slugParamSubscription.unsubscribe();
   }
 
 }

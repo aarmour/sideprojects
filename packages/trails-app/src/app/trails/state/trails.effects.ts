@@ -26,9 +26,11 @@ export class TrailsEffects {
     .map(action => action.payload)
     .switchMap((slug: string) =>
       this.db.list(TrailListService.PATH, ref => ref.orderByChild('slug').limitToFirst(1).equalTo(slug))
-        .valueChanges()
+        .snapshotChanges()
         .take(1)
-        .map((results: any[]) => new FetchTrailSuccessAction(results[0]))
+        .map(results => results[0])
+        .map(result =>
+          new FetchTrailSuccessAction({ id: result.key, ...result.payload.toJSON() } as Trail))
     );
 
   // @Effect()

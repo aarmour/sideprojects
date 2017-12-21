@@ -13,7 +13,12 @@ import { Store } from '@ngrx/store';
 
 import { State } from '../../state';
 import { ListPushAction } from '../../firebase';
-import { SelectTrailAction, getSelectedTrail, Trail } from '../../trails';
+import {
+  FetchTrailAction,
+  SelectTrailAction,
+  Trail,
+  getSelectedTrail
+} from '../../trails';
 
 @Component({
   selector: 'trl-trail-conditions-edit-container',
@@ -47,7 +52,10 @@ export class TrailConditionsEditContainerComponent
   ngOnInit() {
     this.slugParamSubscription = this.route.paramMap
       .map((params: ParamMap) => params.get('slug'))
-      .subscribe((slug: string) => this.store.dispatch(new SelectTrailAction(slug)));
+      .subscribe((slug: string) => {
+        this.store.dispatch(new FetchTrailAction(slug));
+        this.store.dispatch(new SelectTrailAction(slug));
+      });
   }
 
   ngOnDestroy() {

@@ -2,10 +2,40 @@
   margin-bottom: 15px;
 }
 
+.header {
+  margin-bottom: 15px;
+  padding-bottom: 0.5em;
+  border-bottom: 1px solid #ccc;
+  color: rgba(0, 0, 0, 0.54);
+}
+
 .form-wrapper {
   padding: 0 15px;
 }
 
 .fill-width {
   width: 100%;
+}
+
+.form-group-body {
+  margin-left: 15px;
+}
+
+mat-button-toggle-group[name="condition"] {
+
+  .mat-button-toggle-checked {
+    color: white;
+  }
+
+  .mat-button-toggle-checked[value="Poor"] {
+    background-color: red;
+  }
+
+  .mat-button-toggle-checked[value="Fair"] {
+    background-color: orange;
+  }
+
+  .mat-button-toggle-checked[value="Good"] {
+    background-color: green;
+  }
 }

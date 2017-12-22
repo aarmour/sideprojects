@@ -10,7 +10,11 @@ import { adapter } from './trails.adapter';
 export function reducer(state: TrailsState, action: TrailsActions) {
   switch (action.type) {
     case TRAILS_FETCH_TRAIL_SUCCESS: {
-      return adapter.addOne(action.payload, state);
+      if ((state.ids as any[]).includes(action.payload.slug)) {
+        return adapter.updateOne({ id: action.payload.slug, changes: action.payload }, state);
+      } else {
+        return adapter.addOne(action.payload, state);
+      }
     }
 
     case TRAILS_LIST_UPDATED: {

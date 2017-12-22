@@ -1,9 +1,7 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-// // Start writing Firebase Functions
-// // https://firebase.google.com/functions/write-firebase-functions
-//
-// export const helloWorld = functions.https.onRequest((request, response) => {
-//  response.send("Hello from Firebase!");
-// });
+const functions = require("firebase-functions");
+const update_current_conditions_1 = require("./update-current-conditions");
+exports.updateCurrentConditions = functions.database.ref('/trailConditions/{trailId}/{id}')
+    .onCreate(event => update_current_conditions_1.handleUpdateCurrentConditions(event.params.trailId, event.data));
 //# sourceMappingURL=index.js.map

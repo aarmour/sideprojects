@@ -4,6 +4,8 @@ import { Trail } from './trails.interfaces';
 
 export const TRAILS_FETCH_TRAIL = 'TRAILS_FETCH_TRAIL';
 export const TRAILS_FETCH_TRAIL_SUCCESS = 'TRAILS_FETCH_TRAIL_SUCCESS';
+export const TRAILS_FETCH_LAST_UPDATED = 'TRAILS_FETCH_LAST_UPDATED';
+export const TRAILS_FETCH_LAST_UPDATED_SUCCESS = 'TRAILS_FETCH_LAST_UPDATED_SUCCESS';
 export const TRAILS_LIST_UPDATED = 'TRAILS_LIST_UPDATED';
 export const TRAILS_SELECT_TRAIL = 'TRAILS_SELECT_TRAIL';
 export const TRAILS_SAVE_TRAIL_CONDITION = 'TRAILS_SAVE_TRAIL_CONDITION';
@@ -20,6 +22,16 @@ export class FetchTrailSuccessAction {
   readonly type = TRAILS_FETCH_TRAIL_SUCCESS;
 
   public constructor(public payload: Trail) { }
+}
+
+export class FetchLastUpdatedAction {
+  readonly type = TRAILS_FETCH_LAST_UPDATED;
+}
+
+export class FetchLastUpdatedSuccessAction {
+  readonly type = TRAILS_FETCH_LAST_UPDATED_SUCCESS;
+
+  public constructor(public payload: Trail[]) { }
 }
 
 export class ListUpdatedAction {
@@ -49,6 +61,8 @@ export class SaveTrailConditionFailure {
 }
 
 export type TrailsActions =
+  | FetchLastUpdatedAction
+  | FetchLastUpdatedSuccessAction
   | FetchTrailAction
   | FetchTrailSuccessAction
   | ListUpdatedAction

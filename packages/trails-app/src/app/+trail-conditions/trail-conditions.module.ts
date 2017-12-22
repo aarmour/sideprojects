@@ -11,6 +11,7 @@ import { TrailConditionsContainerComponent } from './trail-conditions-container/
 import { TrailConditionTextComponent } from './trail-condition-text/trail-condition-text.component';
 import { TrailConditionsEditContainerComponent } from './trail-conditions-edit-container/trail-conditions-edit-container.component';
 import { TrailConditionsDetailContainerComponent } from './trail-conditions-detail-container/trail-conditions-detail-container.component';
+import { TrailConditionsListContainerComponent } from './trail-conditions-list-container/trail-conditions-list-container.component';
 
 @NgModule({
   imports: [
@@ -25,7 +26,8 @@ import { TrailConditionsDetailContainerComponent } from './trail-conditions-deta
     TrailConditionsContainerComponent,
     TrailConditionTextComponent,
     TrailConditionsEditContainerComponent,
-    TrailConditionsDetailContainerComponent
+    TrailConditionsDetailContainerComponent,
+    TrailConditionsListContainerComponent
   ]
 })
 export class TrailConditionsModule { }

@@ -6,7 +6,12 @@ import { Observable } from 'rxjs/Observable';
 import { Store } from '@ngrx/store';
 
 import { State } from '../../state';
-import { Trail, selectAllTrails, SelectTrailAction } from '../../trails';
+import {
+  FetchLastUpdatedAction,
+  SelectTrailAction,
+  Trail,
+  getLastUpdatedTrails
+} from '../../trails';
 
 @Component({
   selector: 'trl-trail-conditions-container',
@@ -21,9 +26,7 @@ export class TrailConditionsContainerComponent {
     private router: Router,
     private route: ActivatedRoute,
     private store: Store<State>
-  ) {
-    this.trails = this.store.select(selectAllTrails);
-  }
+  ) { }
 
   onSearchSelected(trail: Trail) {
     this.store.dispatch(new SelectTrailAction(trail.id));

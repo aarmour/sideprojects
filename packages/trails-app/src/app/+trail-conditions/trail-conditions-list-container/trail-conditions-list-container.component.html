@@ -1,0 +1,14 @@
+<mat-accordion>
+  <mat-expansion-panel *ngFor="let trail of trails | async" hideToggle="true">
+    <mat-expansion-panel-header>
+      <mat-panel-title>{{trail.name}}</mat-panel-title>
+      <trl-trail-condition-text [condition]="trail.currentCondition"></trl-trail-condition-text>
+    </mat-expansion-panel-header>
+    <mat-action-row>
+      <a [routerLink]="[trail.slug, 'edit']" mat-button color="primary">UPDATE</a>
+    </mat-action-row>
+
+    <!-- <trl-mtb-project-icon [url]="trail.mtbProjectUrl" *ngIf="trail.mtbProjectUrl"></trl-mtb-project-icon> -->
+    <div>Last updated: {{trail.currentConditionLastUpdated | date:'MMMM d, yyyy \'at\' hh:mm a'}}</div>
+  </mat-expansion-panel>
+</mat-accordion>

@@ -17,6 +17,7 @@ export interface Trail {
 
 export interface TrailsState extends EntityState<Trail> {
   selectedTrail: string | null;
+  lastUpdated: string[];
 }
 
 export interface State extends RootState {

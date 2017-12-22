@@ -11,11 +11,15 @@ import { AngularFireAction, AngularFireDatabase } from 'angularfire2/database';
 import { TrailListService } from '../trail-list.service';
 import { Trail } from './trails.interfaces';
 import {
+  TRAILS_FETCH_LAST_UPDATED,
   TRAILS_FETCH_TRAIL,
+  FetchLastUpdatedAction,
+  FetchLastUpdatedSuccessAction,
   FetchTrailAction,
   FetchTrailSuccessAction,
   ListUpdatedAction
 } from './trails.actions';
+import { } from '../index';
 
 @Injectable()
 export class TrailsEffects {
@@ -31,6 +35,19 @@ export class TrailsEffects {
         .map(results => results[0])
         .map(result =>
           new FetchTrailSuccessAction({ id: result.key, ...result.payload.toJSON() } as Trail))
+    );
+
+  @Effect()
+  fetchLastUpdated = this.actions
+    .ofType<FetchLastUpdatedAction>(TRAILS_FETCH_LAST_UPDATED)
+    .switchMap(() =>
+      this.db.list(TrailListService.PATH, ref =>
+        ref.orderByChild('currentConditionLastUpdated').startAt(0).limitToFirst(50)
+      )
+        .snapshotChanges()
+        .take(1)
+        .map(results => results.map(result => ({ id: result.key, ...result.payload.toJSON() })))
+        .map(results => new FetchLastUpdatedSuccessAction(results as Trail[]))
     );
 
   // @Effect()

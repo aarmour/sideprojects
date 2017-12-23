@@ -14,6 +14,10 @@ const routes: Routes = [
     loadChildren: './+login/login.module#LoginModule'
   },
   {
+    path: 'menu',
+    loadChildren: './+menu/menu.module#MenuModule'
+  },
+  {
     path: 'trail-conditions',
     loadChildren: './+trail-conditions/trail-conditions.module#TrailConditionsModule'
   },

@@ -5,7 +5,6 @@ import { RouterModule } from '@angular/router';
 import { ComponentsModule } from '../components';
 
 import { AppToolbarComponent } from './app-toolbar/app-toolbar.component';
-import { AppToolbarContainerComponent } from './app-toolbar/app-toolbar-container.component';
 
 @NgModule({
   imports: [
@@ -15,11 +14,9 @@ import { AppToolbarContainerComponent } from './app-toolbar/app-toolbar-containe
   ],
   exports: [
     AppToolbarComponent,
-    AppToolbarContainerComponent
   ],
   declarations: [
     AppToolbarComponent,
-    AppToolbarContainerComponent
   ]
 })
 export class NavigationModule { }

@@ -1,17 +1,8 @@
 <div class="app-toolbar-wrapper">
-  <trl-app-toolbar-container></trl-app-toolbar-container>
-</div>
-
-<div class="toolbar-wrapper">
-  <mat-toolbar color="primary">
-    <button mat-icon-button (click)="goBack()">
-      <mat-icon>chevron_left</mat-icon>
-    </button>
-    <span class="flex-fill text-center toolbar-title">
-      Update Conditions
-    </span>
-    <span class="toolbar-icon-button-spacer"></span>
-  </mat-toolbar>
+  <trl-app-toolbar label="Update Conditions"
+                   showBackButton="true"
+                   (goBack)="goBack()">
+  </trl-app-toolbar>
 </div>
 
 <div class="content-wrapper">

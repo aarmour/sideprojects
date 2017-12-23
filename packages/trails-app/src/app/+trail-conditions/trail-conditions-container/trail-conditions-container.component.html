@@ -1,6 +1,11 @@
-<trl-trails-search-input-container (selected)="onSearchSelected($event)"></trl-trails-search-input-container>
-<router-outlet></router-outlet>
-<footer class="flex">
-  <span class="flex-fill"></span>
-  <trl-algolia-icon></trl-algolia-icon>
-</footer>
+<div class="content-wrapper">
+  <trl-trails-search-input-container (selected)="onSearchSelected($event)"></trl-trails-search-input-container>
+  <router-outlet></router-outlet>
+  <div class="flex search-attribution">
+    <span class="flex-fill"></span>
+    <trl-algolia-icon></trl-algolia-icon>
+  </div>
+</div>
+<div class="toolbar-wrapper">
+  <trl-app-toolbar-container></trl-app-toolbar-container>
+</div>

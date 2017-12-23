@@ -1,4 +1,16 @@
-footer {
+:host {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+.content-wrapper {
+  flex: 1;
+  overflow-x: hidden;
+  overflow-y: scroll;
+}
+
+.search-attribution {
   margin-top: 15px;
   padding: 0 8px;
 }

@@ -4,6 +4,7 @@ import { FormsModule } from '@angular/forms';
 
 import { AlgoliaModule } from '../algolia';
 import { ComponentsModule } from '../components';
+import { NavigationModule } from '../navigation';
 import { TrailsModule } from '../trails';
 
 import { TrailConditionsRoutingModule } from './trail-conditions-routing.module';
@@ -19,6 +20,7 @@ import { TrailConditionsListContainerComponent } from './trail-conditions-list-c
     FormsModule,
     ComponentsModule,
     AlgoliaModule,
+    NavigationModule,
     TrailsModule,
     TrailConditionsRoutingModule
   ],

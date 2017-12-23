@@ -10,60 +10,66 @@
   </mat-toolbar>
 </div>
 
-<div class="form-wrapper" *ngIf="trail | async; let trail">
-  <div class="header">
-    {{trail.name}}
-  </div>
-  <form>
-    <div>
-      <mat-form-field class="fill-width" (click)="picker.open()">
-        <input matInput
-               name="date"
-               [matDatepicker]="picker"
-               [(ngModel)]="date"
-               [max]="maxDate"
-               placeholder="Choose a date"
-               disabled>
-        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
-        <mat-datepicker #picker disabled="false"></mat-datepicker>
+<div class="content-wrapper">
+  <div class="form-wrapper" *ngIf="trail | async; let trail">
+    <div class="header">
+      {{trail.name}}
+    </div>
+    <form>
+      <div>
+        <mat-form-field class="fill-width" (click)="picker.open()">
+          <input matInput
+                name="date"
+                [matDatepicker]="picker"
+                [(ngModel)]="date"
+                [max]="maxDate"
+                placeholder="Choose a date"
+                disabled>
+          <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+          <mat-datepicker #picker disabled="false"></mat-datepicker>
+        </mat-form-field>
+      </div>
+      <div class="form-group">
+        <label>Condition</label>
+        <div class="form-group-body">
+          <mat-button-toggle-group name="condition" [(ngModel)]="condition">
+            <mat-button-toggle value="Poor">
+              Poor
+            </mat-button-toggle>
+            <mat-button-toggle value="Fair">
+              Fair
+            </mat-button-toggle>
+            <mat-button-toggle value="Good">
+              Good
+            </mat-button-toggle>
+          </mat-button-toggle-group>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label>Hazards</label>
+        <div class="form-group-body flex flex-column">
+          <mat-checkbox name="hazard-water" value="wet" [(ngModel)]="hazardWater">Water / Mud</mat-checkbox>
+          <mat-checkbox name="hazard-snow" value="snow" [(ngModel)]="hazardSnow">Snow</mat-checkbox>
+          <mat-checkbox name="hazard-sneks" value="sneks" [(ngModel)]="hazardSneks">Sneks</mat-checkbox>
+        </div>
+      </div>
+
+      <mat-form-field class="form-group fill-width">
+        <textarea matInput name="notes" placeholder="Notes" rows="3" [(ngModel)]="notes"></textarea>
       </mat-form-field>
-    </div>
-    <div class="form-group">
-      <label>Condition</label>
-      <div class="form-group-body">
-        <mat-button-toggle-group name="condition" [(ngModel)]="condition">
-          <mat-button-toggle value="Poor">
-            Poor
-          </mat-button-toggle>
-          <mat-button-toggle value="Fair">
-            Fair
-          </mat-button-toggle>
-          <mat-button-toggle value="Good">
-            Good
-          </mat-button-toggle>
-        </mat-button-toggle-group>
+
+      <div class="flex">
+        <span class="flex-fill"></span>
+        <button mat-button type="button" (click)="goBack()">CANCEL</button>
+        <button mat-button color="primary"
+                type="submit"
+                (click)="save(trail.id)">SAVE</button>
       </div>
-    </div>
+    </form>
+  </div>
+</div>
 
-    <div class="form-group">
-      <label>Hazards</label>
-      <div class="form-group-body flex flex-column">
-        <mat-checkbox name="hazard-water" value="wet" [(ngModel)]="hazardWater">Water / Mud</mat-checkbox>
-        <mat-checkbox name="hazard-snow" value="snow" [(ngModel)]="hazardSnow">Snow</mat-checkbox>
-        <mat-checkbox name="hazard-sneks" value="sneks" [(ngModel)]="hazardSneks">Sneks</mat-checkbox>
-      </div>
-    </div>
-
-    <mat-form-field class="form-group fill-width">
-      <textarea matInput name="notes" placeholder="Notes" rows="3" [(ngModel)]="notes"></textarea>
-    </mat-form-field>
-
-    <div class="flex">
-      <span class="flex-fill"></span>
-      <button mat-button type="button" (click)="goBack()">CANCEL</button>
-      <button mat-button color="primary"
-              type="submit"
-              (click)="save(trail.id)">SAVE</button>
-    </div>
-  </form>
+<div class="app-toolbar-wrapper">
+  <trl-app-toolbar-container></trl-app-toolbar-container>
 </div>

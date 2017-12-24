@@ -1,0 +1,9 @@
+$trl-avatar-width: 50px;
+$trl-avatar-height: 50px;
+
+.trl-avatar {
+  width: $trl-avatar-width;
+  height: $trl-avatar-height;
+  border-radius: 50%;
+  flex-shrink: 0;
+}

@@ -1,1 +1,27 @@
-<trl-app-toolbar></trl-app-toolbar>
+<div class="app-toolbar-wrapper">
+  <trl-app-toolbar></trl-app-toolbar>
+</div>
+<div *ngIf="isInitialized | async; else loading" class="user-info-section">
+  <div *ngIf="isAuthenticated | async; else anonymous">
+    <div *ngIf="userInfo | async; let user" class="user-summary">
+      <img trlAvatar [src]="user.photoURL">
+      <div>
+        <div>{{user.displayName}}</div>
+        <div>{{user.email}}</div>
+      </div>
+    </div>
+    <button mat-raised-button color="primary" (click)="logout()">Sign out</button>
+  </div>
+  <ng-template #anonymous>
+    <div class="social-login-wrapper">
+      <trl-social-login-button provider="facebook" (click)="loginWithFacebook()"></trl-social-login-button>
+      <trl-social-login-button provider="google" (click)="loginWithGoogle()"></trl-social-login-button>
+    </div>
+  </ng-template>
+</div>
+
+<ng-template #loading>
+  <div class="spinner-wrapper">
+    <mat-spinner></mat-spinner>
+  </div>
+</ng-template>

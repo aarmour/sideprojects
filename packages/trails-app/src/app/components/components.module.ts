@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
+import { AvatarComponent, AvatarDirective } from './avatar/avatar';
 import { BadgeComponent } from './badge/badge.component';
 import { MtbProjectIconComponent } from './mtb-project-icon/mtb-project-icon.component';
 
@@ -16,12 +17,13 @@ import {
   MatIconModule,
   MatInputModule,
   MatListModule,
+  MatProgressSpinnerModule,
   MatRadioModule,
   MatSelectModule,
   MatSlideToggleModule,
   MatSnackBarModule,
   MatToolbarModule,
-  MatTooltipModule
+  MatTooltipModule,
 } from '@angular/material';
 
 const matModules = [
@@ -40,6 +42,7 @@ const matModules = [
   MatSelectModule,
   MatSlideToggleModule,
   MatSnackBarModule,
+  MatProgressSpinnerModule,
   MatToolbarModule,
   MatTooltipModule
 ];
@@ -50,11 +53,15 @@ const matModules = [
     ...matModules
   ],
   declarations: [
+    AvatarComponent,
+    AvatarDirective,
     BadgeComponent,
     MtbProjectIconComponent
   ],
   exports: [
     ...matModules,
+    AvatarComponent,
+    AvatarDirective,
     BadgeComponent,
     MtbProjectIconComponent
   ]

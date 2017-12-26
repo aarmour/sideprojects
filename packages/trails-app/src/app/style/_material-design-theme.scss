@@ -1,0 +1,17 @@
+@import '~@angular/material/theming';
+@import './palette';
+
+// Include the common styles for Angular Material.
+// This mixin should only ever be included once!
+@include mat-core();
+
+// Define the palettes for the theme.
+$trl-app-primary: mat-palette($trl-blue);
+$trl-app-accent: mat-palette($trl-yellow);
+$trl-app-warn: mat-palette($mat-red);
+
+// Create the theme object (a Sass map containing all of the palettes).
+$trl-app-theme: mat-light-theme($trl-app-primary, $trl-app-accent, $trl-app-warn);
+
+// Include theme styles for core and each component used in the app.
+@include angular-material-theme($trl-app-theme);

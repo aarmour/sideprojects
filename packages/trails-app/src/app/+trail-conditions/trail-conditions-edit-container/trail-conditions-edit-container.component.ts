@@ -64,7 +64,7 @@ export class TrailConditionsEditContainerComponent
 
   get data() {
     return {
-      date: this.date.toISOString(),
+      date: -(this.date.getTime()),
       condition: this.condition,
       hazardSneks: this.hazardSneks,
       hazardSnow: this.hazardSnow,

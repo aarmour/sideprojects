@@ -42,7 +42,7 @@ export class TrailsEffects {
     .ofType<FetchLastUpdatedAction>(TRAILS_FETCH_LAST_UPDATED)
     .switchMap(() =>
       this.db.list(TrailListService.PATH, ref =>
-        ref.orderByChild('currentConditionLastUpdated').startAt(0).limitToFirst(50)
+        ref.orderByChild('currentConditionLastUpdated').startAt(-32472144000000).limitToFirst(25)
       )
         .snapshotChanges()
         .take(1)

@@ -10,9 +10,9 @@ export class TrailConditionTextComponent implements OnChanges {
   @Input() condition: 'Poor' | 'Fair' | 'Good' | 'Unknown' = 'Good';
 
   private colors = {
-    'Poor': 'red',
-    'Fair': 'orange',
-    'Good': 'green',
+    'Poor': '#ff6b60',
+    'Fair': '#ffb64e',
+    'Good': '#57a04f',
     'Unknown': '#afafaf'
   };
   get color() {

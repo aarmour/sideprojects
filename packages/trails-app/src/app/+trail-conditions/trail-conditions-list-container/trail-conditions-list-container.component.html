@@ -9,6 +9,8 @@
     </mat-action-row>
 
     <!-- <trl-mtb-project-icon [url]="trail.mtbProjectUrl" *ngIf="trail.mtbProjectUrl"></trl-mtb-project-icon> -->
-    <div>Last updated: {{trail.currentConditionLastUpdated | date:'MMMM d, yyyy \'at\' hh:mm a'}}</div>
+    <div *ngIf="trail.currentConditionLastUpdated">
+      Last updated: {{trail.currentConditionLastUpdated | date:'MMMM d, yyyy \'at\' hh:mm a'}}
+    </div>
   </mat-expansion-panel>
 </mat-accordion>

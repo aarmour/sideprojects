@@ -34,7 +34,7 @@ export class TrailsEffects {
         .take(1)
         .map(results => results[0])
         .map(result =>
-          new FetchTrailSuccessAction({ id: result.key, ...result.payload.toJSON() } as Trail))
+          new FetchTrailSuccessAction(Trail.fromFirebaseObject(result)))
     );
 
   @Effect()
@@ -46,8 +46,8 @@ export class TrailsEffects {
       )
         .snapshotChanges()
         .take(1)
-        .map(results => results.map(result => ({ id: result.key, ...result.payload.toJSON() })))
-        .map(results => new FetchLastUpdatedSuccessAction(results as Trail[]))
+        .map(results => results.map(Trail.fromFirebaseObject))
+        .map((trails: Trail[]) => new FetchLastUpdatedSuccessAction(trails))
     );
 
   // @Effect()

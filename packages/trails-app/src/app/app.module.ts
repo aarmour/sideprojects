@@ -16,6 +16,7 @@ import { ALGOLIA_CONFIG, AlgoliaConfig, AlgoliaModule } from './algolia';
 import { AuthModule } from './auth';
 import { CoreModule } from './core/core.module';
 import { FirebaseModule } from './firebase';
+import { RouterModule } from './router';
 import { StateModule } from './state/state.module';
 import { TrailsModule } from './trails';
 
@@ -42,6 +43,7 @@ const algoliaConfig: AlgoliaConfig = {
     CoreModule.forRoot(),
     AlgoliaModule.forRoot(),
     FirebaseModule.forRoot(),
+    RouterModule.forRoot(),
     StateModule.forRoot(),
     AuthModule.forRoot(),
     TrailsModule.forRoot(),

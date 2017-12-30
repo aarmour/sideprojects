@@ -13,6 +13,7 @@ import { Store } from '@ngrx/store';
 
 import { State } from '../../state';
 import { ListPushAction } from '../../firebase';
+import { GoAction } from '../../router';
 import {
   FetchTrailAction,
   SelectTrailAction,
@@ -77,9 +78,13 @@ export class TrailConditionsEditContainerComponent
     this.location.back();
   }
 
-  save(key: string) {
-    const path = `trailConditions/${key}`;
-    this.store.dispatch(new ListPushAction({ path, data: this.data }));
+  save(trail: Trail) {
+    const path = `trailConditions/${trail.id}`;
+    this.store.dispatch(new ListPushAction({
+      path,
+      data: this.data,
+      successAction: (payload) => new GoAction({ path: [`/trail-conditions/${trail.slug}`] })
+    }));
   }
 
   selectToday() {

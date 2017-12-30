@@ -10,7 +10,7 @@ import { Store } from '@ngrx/store';
 import { AngularFireList } from 'angularfire2/database';
 
 import { FirebaseListRegistry } from '../firebase-list-registry.service';
-import { FirebaseListPushActionPayload } from './firebase.interfaces';
+import { ListPushActionPayload } from './firebase.interfaces';
 import {
   FIREBASE_LIST_PUSH,
   ListPushAction,
@@ -30,9 +30,16 @@ export class FirebaseEffects {
       const data = formatData(action.payload.data);
 
       return Observable.fromPromise(listRef.push(data))
-        .mergeMap((response: { path: object }) => {
+        .mergeMap((response: { path: object, key: string }) => {
           const path = response.path.toString();
-          return this.createActions(action.payload.successAction, path, new ListPushSuccessAction(path));
+          const key = response.key;
+          const successActionPayload = { path, key };
+
+          return this.createActions(
+            action.payload.successAction,
+            successActionPayload,
+            new ListPushSuccessAction(successActionPayload)
+          );
         })
         .catch(error => Observable.of(new ListPushFailureAction(null)));
     });
